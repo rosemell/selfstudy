@@ -1,5 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS 1
-//vs©и╫╚иойЖ╢ЗбК╦╢жф╣╫нд╪Чnewc++file.cpp,рт╠ёж╓пб╫╗вт╢Ь
+//vsЕ▐╞Е╟├Д╦┼Х©╟Д╩ёГ═│Е╓█Е┬╤Е┬╟Ф√┤Д╩╤newc++file.cpp,Д╩╔Д©²Х╞│Ф√╟Е╩╨Х┤╙Е╦╕
 #include <stdio.h>
 int main()
 {
@@ -8,7 +8,7 @@ int main()
 	{
 		while (b < 9)
 		{
-			printf("%d*%d=%d   ", a, b,a*b);
+			printf("%d*%d=%d\t", a, b,a*b);
 			b++;
 		}
 		printf("\n");

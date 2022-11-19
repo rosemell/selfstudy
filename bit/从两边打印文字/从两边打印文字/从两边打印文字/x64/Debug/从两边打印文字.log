@@ -1,0 +1,4 @@
+﻿  源.cpp
+C:\Users\王\Desktop\小桌面\bit\从两边打印文字\从两边打印文字\从两边打印文字\源.cpp(11,23): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+C:\Users\王\Desktop\小桌面\bit\从两边打印文字\从两边打印文字\从两边打印文字\源.cpp(12,20): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  从两边打印文字.vcxproj -> C:\Users\王\Desktop\小桌面\bit\从两边打印文字\从两边打印文字\x64\Debug\从两边打印文字.exe

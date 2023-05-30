@@ -4,7 +4,7 @@ static SListNode* BuyLTNode(SListDataType x)
 	SListNode* newnode = (SListNode*)malloc(sizeof(SListNode));
 	if (NULL == newnode)
 	{
-		perror("ÄÚ´æ¿ª±ÙÊ§°Ü£º");
+		perror("å†…å­˜å¼€è¾Ÿå¤±è´¥ï¼š");
 		return;
 	}
 	newnode->data = x;
@@ -96,16 +96,16 @@ void SLInsert(SListNode** pphead,SListNode* pos, SListDataType x)
 	{
 		cur = cur->next;
 	}
-	if(cur->next==pos)//ÕÒµ½ÁË
+	if(cur->next==pos)//æ‰¾åˆ°äº†
 	{
 		SListNode* newnode = BuyLTNode(x);
 		cur->next = newnode;
 		newnode->next = pos;
 	}
-	//Ã»ÕÒµ½£¨cur->next==NULL
+	//æ²¡æ‰¾åˆ°ï¼ˆcur->next==NULL
 	if (NULL==cur)
 	{
-		printf("Ã»ÕÒµ½pos\n");
+		printf("æ²¡æ‰¾åˆ°pos\n");
 	}
 }
 void SLInsertAfter(SListNode* pos, SListDataType x)
@@ -133,7 +133,7 @@ void SListErase(SListNode** pphead, SListNode*pos)
 		}
 		if (NULL == cur)
 		{
-			printf("Ã»ÕÒµ½pos:%d", __LINE__);
+			printf("æ²¡æ‰¾åˆ°pos:%d", __LINE__);
 		}
 		cur->next = pos->next;
 		free(pos);
@@ -148,7 +148,7 @@ void SListEraseAfter( SListNode* pos)
 }
 void SListDestroy(SListNode** pphead)
 {
-	assert(pphead&&*pphead);
+	assert(pphead);
 	SListNode* cur = *pphead, * next = cur->next;
 	while (cur)
 	{

@@ -1,0 +1,45 @@
+https://leetcode.cn/problems/reverse-linked-list/description/
+
+// struct ListNode* reverseList(struct ListNode* head){
+//     if(NULL==head)
+//     {
+//         return NULL;
+//     }
+//        struct ListNode* newhead,*next=head->next,*cur=head,*last=NULL;
+//     while(1)
+//     {
+//         cur->next=last;
+//         last=cur;
+//         cur=next;
+//         if(NULL==cur)
+//         {
+//             break;
+//         }
+//         next=next->next;
+//     }
+//     newhead=last;
+//     return newhead;
+//     return 1;
+// }
+
+
+//写一个头插方式的函数，依次头插，结果就是倒叙（本质上与上方代码类似
+void LTPushead(struct ListNode**pphead,struct ListNode* cur)//头插函数
+{
+        cur->next=*pphead;
+        *pphead=cur;
+}
+struct ListNode* reverseList(struct ListNode* head){
+    if(NULL==head)
+    {
+        return NULL;
+    }
+    struct ListNode*newhead=NULL,*cur=head,*next;
+    while(cur)
+    {
+        next=cur->next;
+        LTPushead(&newhead,cur);
+        cur=next;
+    }
+    return newhead;
+}

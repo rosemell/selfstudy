@@ -1,0 +1,76 @@
+https://leetcode.cn/problems/remove-linked-list-elements/description/
+
+// /**
+//  * Definition for singly-linked list.
+//  * struct ListNode {
+//  *     int val;
+//  *     struct ListNode *next;
+//  * };
+//  */
+
+//链接法：将需要删除的数据删除再将下一个节点链接起来
+struct ListNode* removeElements(struct ListNode* head, int val){
+    struct ListNode*cur=head,*prev=NULL;
+    while(cur)
+    {
+        if(cur->val==val)
+        {
+            struct ListNode*temp=cur->next;
+            if(NULL==prev)
+            {
+                head=temp;
+            }
+            else
+            {
+
+                prev->next=temp;
+            }
+            free(cur);
+            cur=temp;
+        }
+        else
+        {
+            prev=cur;
+            cur=cur->next;
+        }
+    }
+    return head;
+
+}
+
+
+
+//尾插法：将不需要删除的数据尾插在一起(逆天方法，不要用)
+//  struct ListNode* removeElements(struct ListNode* head, int val){
+//      struct ListNode*newhead=NULL,*cur=head,*tail=NULL,*temp_next=NULL;
+//      while(cur)
+//      {
+
+//          if(cur->val!=val)
+//          {
+//              if(NULL==newhead)
+//              {
+//                  newhead=cur;
+//                  tail=cur;
+//              }
+//              else
+//              {
+//                 tail->next=cur;
+//                 tail=cur;
+//              }   
+//               cur=cur->next;
+//          }
+//          else
+//          {
+//              temp_next=cur->next;
+//              free(cur);
+//              cur=temp_next;
+//          }
+//      }
+//      if(NULL!=tail)
+//     {
+//          tail->next=NULL;
+//          }
+
+//      return newhead;
+//  }

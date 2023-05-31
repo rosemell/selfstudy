@@ -1,0 +1,103 @@
+// /*
+// struct ListNode {
+//     int val;
+//     struct ListNode *next;
+//     ListNode(int x) : val(x), next(NULL) {}
+//};*/
+
+
+//带哨兵位
+class Partition {
+public:
+     ListNode* partition(ListNode* pHead, int x){
+        if(NULL==pHead)
+        {
+            return NULL;
+        }
+        struct ListNode*head1=NULL,*head2=NULL,*tail1=NULL,*tail2=NULL,*cur=pHead;
+        head1=(struct ListNode*)malloc(sizeof(struct ListNode));
+        head2=(struct ListNode*)malloc(sizeof(struct ListNode));
+        head1->next=NULL;
+        head2->next=NULL;
+        tail1=head1;
+        tail2=head2;
+        while(cur)
+        {
+            if(cur->val<x)
+            {
+                tail1->next=cur;
+                tail1=tail1->next;
+            }
+            else
+            {
+                tail2->next=cur;
+                tail2=tail2->next;
+            }
+            cur=cur->next;
+        }
+        struct ListNode*temp;
+        temp=head1;
+        head1=head1->next;
+        free(temp);
+        temp=head2;
+        head2=head2->next;
+        free(temp);
+        temp=NULL;
+        if(NULL!=tail2)
+        {
+            tail2->next=NULL;
+        }
+        if(NULL==head1)
+        {
+            return head2;
+        }
+        tail1->next=head2;
+
+        return head1;
+     }
+};
+//不带哨兵位
+// class Partition {
+// public:
+//     ListNode* partition(ListNode* pHead, int x) {
+//         if(NULL==pHead)
+//         return NULL;
+//         struct ListNode*cur=pHead,*pHead1=NULL,*pHead2=NULL,*tail1=NULL,*tail2=NULL;
+//         while(cur)
+//         {
+//             if(cur->val<x)
+//             {
+//                 if(pHead1==NULL)
+//                 {
+//                     pHead1=cur;
+//                     tail1=cur;
+//                 }
+//                 else 
+//                 {
+//                     tail1->next=cur;
+//                 tail1=cur;
+//                 }
+//             }
+//             else 
+//             {
+//             if(NULL==pHead2)
+//             {
+//                 pHead2=cur;
+//                 tail2=cur;
+//             }
+//             else
+//             {
+//                 tail2->next=cur;
+//                 tail2=cur;
+//             }
+//             }
+//             cur=cur->next;
+//         }
+//         if(tail2)
+//         tail2->next=NULL;
+// if(NULL==tail1)
+// return pHead2;
+// tail1->next=pHead2;
+// return pHead1;
+//     }
+// };

@@ -18,7 +18,7 @@ void STPush(ST* plist,STDataType x)
 	assert(plist);
 	if(plist->capacity ==plist->top)
 	{
-		int newcapcity = plist->capacity == 0 ? 4 : plist->capacity;
+		int newcapcity = plist->capacity == 0 ? 4 : plist->capacity*2;
 		ST* tmp = NULL;
 		if (NULL == (tmp = realloc(plist->a, sizeof(ST) * newcapcity)))
 		{
@@ -31,7 +31,7 @@ void STPush(ST* plist,STDataType x)
 	plist->a[plist->top] = x;
 	plist->top++;
 }
-//�ǿշ�0
+//·Ç¿Õ·µ0
 bool STEmpty(ST* plist)
 {
 	assert(plist);

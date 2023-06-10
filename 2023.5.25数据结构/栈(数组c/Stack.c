@@ -22,7 +22,7 @@ void STPush(ST* plist,STDataType x)
 		ST* tmp = NULL;
 		if (NULL == (tmp = realloc(plist->a, sizeof(ST) * newcapcity)))
 		{
-			perror("relloc error:");
+			perror("realloc error:");
 			return;
 		}
 		plist->a = tmp;

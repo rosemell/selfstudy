@@ -18,7 +18,7 @@ void swap(int* p1, int* p2)
 	*p1 = *p2;
 	*p2 = temp;
 }
-//ÏòÉÏµ÷Õû
+//å‘ä¸Šè°ƒæ•´
 void AdjustUp(int* data, int pos, bool compar(void*, void*))
 {
 	int child = pos,par=(child-1)/2;
@@ -36,20 +36,18 @@ void AdjustUp(int* data, int pos, bool compar(void*, void*))
 		}
 	}
 }
-//ÏòÏÂµ÷Õû
+//å‘ä¸‹è°ƒæ•´
 void AdjustDown(int* data, int size,int pos,int compar(void*,void*))
 {
 	int par = pos;
 	int child = par * 2 + 1;
 	while (child < size)
 	{
-		if (child + 1 < size && (compar(&data[child + 1], &data[child]) > 0))//ÅĞ¶ÏÎÒÃÇÊÇ²»ÊÇÓ¦¸Ãµ÷ÕûÓÒº¢×Ó
-		//if (child + 1 < size && data[child+1]>data[child])//ÅĞ¶ÏÎÒÃÇÊÇ²»ÊÇÓ¦¸Ãµ÷ÕûÓÒº¢×Ó
+		if (child + 1 < size && (compar(&data[child + 1], &data[child]) > 0))//åˆ¤æ–­æ˜¯å¦åº”è¯¥è°ƒæ•´å³å­©å­
 		{
 			child++;
 		}
-		//if (compar(&data[child], &data[par]) > 0)
-			if (data[child]>data[par])
+		if (compar(&data[child], &data[par]) > 0)
 		{
 			swap(&data[child], &data[par]);
 		}
@@ -61,11 +59,11 @@ void AdjustDown(int* data, int size,int pos,int compar(void*,void*))
 		child = par * 2 + 1;
 	}
 }
-void HeapSort(int* a, int size)//ÓÃËÙ¶È½Ï¿ìµÄÏòÏÂµ÷Õû
+void HeapSort(int* a, int size)//ç”¨é€Ÿåº¦è¾ƒå¿«çš„å‘ä¸‹è°ƒæ•´
 {
 	int i = 0;
-	//i=size-1-1,ÏÈÕÒµ½×îºóÒ»¸öÒ¶½ÚµãµÄ¸¸½Úµã
-	for (i = (size - 2) / 2; i >= 0;i--)//ÏÈ½¨¶Ñ
+	//i=size-1-1,å…ˆæ‰¾åˆ°æœ€åä¸€ä¸ªå¶èŠ‚ç‚¹çš„çˆ¶èŠ‚ç‚¹
+	for (i = (size - 2) / 2; i >= 0;i--)//å…ˆå»ºå †
 	{
 		AdjustDown(a, size,i,compar);
 	}
@@ -115,10 +113,10 @@ void test(int n)
 		return;
 	}
 	Rand(a, n);
-	printf("ÅÅĞòÇ°£º\n");
+	printf("æ’åºå‰ï¼š\n");
 	print(a, n);
 	HeapSort(a, n);
-	printf("ÅÅĞòºó£º\n");
+	printf("æ’åºåï¼š\n");
 	print(a, n);
 
 	free(a);

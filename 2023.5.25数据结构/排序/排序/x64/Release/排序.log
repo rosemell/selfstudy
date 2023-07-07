@@ -1,0 +1,14 @@
+﻿  Sort.c
+C:\Users\王\Desktop\小桌面\1\编程\小作业\排序\排序\Sort.c(387,1): warning C4010: 单行注释包含行继续符
+C:\Users\王\Desktop\小桌面\1\编程\小作业\排序\排序\Sort.c(388,1): warning C4010: 单行注释包含行继续符
+C:\Users\王\Desktop\小桌面\1\编程\小作业\排序\排序\Sort.c(389,1): warning C4010: 单行注释包含行继续符
+C:\Users\王\Desktop\小桌面\1\编程\小作业\排序\排序\Sort.c(443,1): warning C4010: 单行注释包含行继续符
+C:\Users\王\Desktop\小桌面\1\编程\小作业\排序\排序\Sort.c(444,1): warning C4010: 单行注释包含行继续符
+  test.c
+C:\Users\王\Desktop\小桌面\1\编程\小作业\排序\排序\test.c(24,9): warning C4244: “函数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+  正在生成代码
+  7 of 15 functions (46.7%) were compiled, the rest were copied from previous compilation.
+    2 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  已完成代码的生成
+  排序.vcxproj -> C:\Users\王\Desktop\小桌面\1\编程\小作业\排序\x64\Release\排序.exe
